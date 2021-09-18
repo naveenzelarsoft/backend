@@ -13,11 +13,7 @@ const sequelize = new Sequelize(env.database, env.username, env.password, {
     idle: env.pool.idle
   }
 });
-const db = {
- process.env.database
- process.env.username
- process.env.password
-};
+const db = {};
  
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
