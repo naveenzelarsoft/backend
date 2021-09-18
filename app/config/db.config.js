@@ -1,24 +1,19 @@
-const env = require('./env.js');
+//const env = require('./env.js');
  
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(env.database, env.username, env.password, {
   host: env.host,
-  dialect: env.dialect,
+  dialect: postgres,
   operatorsAliases: false,
  
   pool: {
-    max: env.max,
-    min: env.pool.min,
-    acquire: env.pool.acquire,
-    idle: env.pool.idle
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
   }
 });
-const db = {
-    username: process.env.DB_USERNAME ,
-    password: process.env.DB_PASSWORD ,
-    host: process.env.DB_HOST ,
-    database: process.env.DB_NAME
-};
+const db = {};
  
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
