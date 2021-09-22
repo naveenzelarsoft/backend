@@ -1,8 +1,8 @@
 const env = {
-  database: 'loizenaidb',
-  username: 'postgres',
-  password: '123',
-  host: 'postgres-service',
+  database: process.env.DATABASE,
+  username: process.env.USERNAME,
+  password: process.env.PASSWORD,
+  host: process.env.HOST,
   dialect: 'postgres',
   pool: {
     max: 5,
